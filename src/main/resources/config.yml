@@ -1,0 +1,143 @@
+# ============================================================
+#  LaPurga v2.0 - Configuración Avanzada
+# ============================================================
+
+spawning:
+  enabled: true
+  interval-seconds: 2
+  mobs-per-cycle: 8
+  max-hostiles-near-player: 60
+  min-distance: 12
+  max-distance: 32
+  natural-duplicate-chance: 0.6
+  natural-duplicate-local-cap: 25
+  # Solo generar hordas extra de noche o en oscuridad profunda (cuevas)
+  only-night-or-dark: true
+  max-light-level: 7
+  mob-types:
+    - ZOMBIE
+    - ZOMBIE
+    - SKELETON
+    - SPIDER
+    - CREEPER
+    - CREEPER
+    - ENDERMAN
+    - WITCH
+    - PILLAGER
+    - HUSK
+    - STRAY
+
+buffs:
+  health-multiplier: 1.75
+  damage-multiplier: 1.4
+  fire-resistance: true
+
+zombies:
+  speed-multiplier: 1.35
+  break-blocks: true
+  break-chance: 0.5
+  reinforcements-chance: 0.25
+  max-reinforcement-calls: 2
+  reinforcements-count: 2
+  # Salto hacia el jugador al atacar o perseguir
+  leap-chance: 0.25
+  # Drenar vida al golpear
+  lifesteal-percent: 0.30
+
+skeletons:
+  special-arrow-chance: 0.45
+  arrow-damage-multiplier: 1.5
+  # Disparar ráfaga de 3 flechas
+  multishot-chance: 0.30
+  # Flecha explosiva ligera
+  explosive-arrow-chance: 0.15
+
+creepers:
+  blindness-radius: 10.0
+  blindness-seconds: 8
+  bigger-explosion-chance: 0.35
+  explosion-radius-multiplier: 1.8
+  lightning-chance: 0.30
+  fire-chance: 0.40
+  fire-radius: 3
+  # Creeper magnético: atrae jugadores hacia él antes de explotar
+  gravity-pull-chance: 0.35
+
+spiders:
+  # Lanza telarañas a los pies del jugador al atacar
+  web-trap-chance: 0.40
+  # Emboscada venenosa + salto
+  venom-leap-chance: 0.30
+
+endermen:
+  # Teletransporta al jugador aleatoriamente cerca y lo desorienta
+  swap-teleport-chance: 0.35
+
+witches:
+  # Invoca rayos oscuros o pociones de área extra
+  curse-aura-chance: 0.40
+
+loot:
+  # Siempre suelta loot aleatorio (1.0 = 100% garantizado en cada kill)
+  drop-chance: 1.0
+  require-player-kill: true
+  # Cantidad de ítems aleatorios que suelta cada mob al morir
+  min-drops: 1
+  max-drops: 2
+  # Probabilidad de que salga un ítem de la lista personalizada del menú (/purgaloot)
+  custom-gui-loot-chance: 0.45
+  tier-weights:
+    common: 50
+    rare: 35
+    epic: 15
+
+# --- Atmósfera y Noche Roja ---
+atmosphere:
+  red-night-enabled: true
+  ash-particles: true
+
+# --- Optimización de Rendimiento y Lags (Sin Bajar Dificultad) ---
+performance:
+  # Límite máximo global de mobs hostiles generados por el plugin en el mundo activo
+  max-purge-mobs-per-world: 150
+  # Desactivar IA innecesaria en mobs lejanos o amontonados (ahorra CPU sin bajar daño ni agresividad al estar cerca)
+  smart-activation: true
+  # Limpieza automática de entidades huérfanas o excesivas si se satura el TPS
+  auto-mob-stacking: true
+
+# --- Sistema de Dificultades ---
+difficulty:
+  current: DIFICIL  # FACIL, NORMAL, DIFICIL, EXTREMO, DEVORADOR
+  levels:
+    FACIL:
+      health-mult: 1.25
+      damage-mult: 1.1
+      spawn-rate-mult: 0.5
+      loot-tier: COMMON
+    NORMAL:
+      health-mult: 1.50
+      damage-mult: 1.25
+      spawn-rate-mult: 1.0
+      loot-tier: RARE
+    DIFICIL:
+      health-mult: 1.75
+      damage-mult: 1.40
+      spawn-rate-mult: 1.5
+      loot-tier: EPIC
+    EXTREMO:
+      health-mult: 2.50
+      damage-mult: 2.00
+      spawn-rate-mult: 2.5
+      loot-tier: GOD
+    DEVORADOR:
+      health-mult: 2.80
+      damage-mult: 2.20
+      spawn-rate-mult: 2.5
+      loot-tier: GOD
+
+# --- Jefe Especial: El Devorador de Sombras (Dificultad DEVORADOR) ---
+boss:
+  health: 900.0
+  scale: 3.5
+  ability-interval-seconds: 6
+  vortex-radius: 14.0

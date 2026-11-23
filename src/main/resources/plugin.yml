@@ -1,0 +1,23 @@
+name: LaPurga
+version: '${project.version}'
+main: com.lapurga.LaPurgaPlugin
+api-version: '26.1'
+description: 'Dificultad especial La Purga: habilidades extremas, loot garantizado y menu GUI.'
+authors: [LaPurga]
+
+commands:
+  dificultadespecial:
+    description: Activa o desactiva La Purga en el mundo actual.
+    usage: /<command> [mundo|reload|loot]
+    aliases: [purga, lapurga]
+    permission: hardcoremobs.admin
+  purgaloot:
+    description: Abre el menu GUI para editar el botin garantizado de La Purga.
+    usage: /<command>
+    aliases: [editloot, lootpurga]
+    permission: hardcoremobs.admin
+
+permissions:
+  hardcoremobs.admin:
+    description: Permite controlar La Purga y editar su botin.
+    default: op
